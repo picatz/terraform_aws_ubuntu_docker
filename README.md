@@ -35,5 +35,5 @@ ssh ubuntu@instance_public_ip -i ubuntu_ssh
 
 When you're done, on your host you can now `destroy` the box and everything associted with it.
 ```
-terraform destroy -force
+terraform destroy -force -var "public_ip=$(dig +short myip.opendns.com @resolver1.opendns.com)"
 ```
